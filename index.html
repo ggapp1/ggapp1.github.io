@@ -1,49 +1,94 @@
-<!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Gustavo Germano</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Coming soon…</title>
+		<meta name="description" content="Something new is on the way." />
+		<style>
+			:root {
+				--bg: #0b0d10;
+				--fg: #f2f3f5;
+				--muted: #8a8f98;
+				--accent: #6ea8fe;
+			}
+
+			* { box-sizing: border-box; }
+
+			html, body {
+				height: 100%;
+				margin: 0;
+			}
+
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				padding: 2rem;
+				background: radial-gradient(120% 120% at 50% 0%, #12161c 0%, var(--bg) 55%);
+				color: var(--fg);
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+				text-align: center;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			main {
+				max-width: 32rem;
+				animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+			}
+
+			h1 {
+				margin: 0;
+				font-size: clamp(2.25rem, 8vw, 4rem);
+				font-weight: 600;
+				letter-spacing: -0.02em;
+			}
+
+			h1 .dots::after {
+				content: "";
+				animation: dots 1.6s steps(4, end) infinite;
+			}
+
+			p {
+				margin: 1.25rem 0 0;
+				font-size: 1.05rem;
+				line-height: 1.6;
+				color: var(--muted);
+			}
+
+			.rule {
+				width: 3rem;
+				height: 2px;
+				margin: 2rem auto 0;
+				border-radius: 2px;
+				background: linear-gradient(90deg, transparent, var(--accent), transparent);
+			}
+
+			@keyframes rise {
+				from { opacity: 0; transform: translateY(12px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+
+			@keyframes dots {
+				0%   { content: ""; }
+				25%  { content: "."; }
+				50%  { content: ".."; }
+				75%  { content: "..."; }
+				100% { content: ""; }
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				main { animation: none; }
+				h1 .dots::after { content: "…"; animation: none; }
+			}
+		</style>
 	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-
-				<!-- Header -->
-					<header id="header">
-						<h1>Gustavo Germano</h1>
-						<p>Computer Science M.Sc. Student &nbsp;&bull;&nbsp; Systems Analyst &nbsp;&bull;&nbsp; Machine Learning Enthusiast</p>
-						<nav>
-							<ul>
-								<li><a href="https://twitter.com/ggapp1" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://Github.com/ggapp1" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="mailto:gustavo.germano1@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-								<li><a href="https://homepages.dcc.ufmg.br/~gustavog/resume.pdf" class="icon solid fa-address-card"><span class="label">Twitter</span></a></li>
-
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; ggapp1. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
-
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
+	<body>
+		<main>
+			<h1>Coming soon<span class="dots"></span></h1>
+			<p>Something new is on the way. Check back shortly.</p>
+			<div class="rule"></div>
+		</main>
 	</body>
 </html>
